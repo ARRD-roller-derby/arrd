@@ -4,7 +4,7 @@ const {
   ButtonStyle,
   ButtonBuilder,
 } = require('discord.js')
-const { MongoDb, DailyContest,Question } = require('database')
+const { MongoDb, DailyContest, Question } = require('database')
 const dayjs = require('dayjs')
 const { shuffle } = require('../../helpers/shuffle')
 const { questionDifficulty } = require('../../helpers/question-difficulty')
