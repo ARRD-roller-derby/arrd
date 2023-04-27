@@ -1,9 +1,6 @@
 {
   "name": "database",
   "dependencies": {
-    "@prisma/client": "^4.11.0"
-  },
-  "devDependencies": {
-    "prisma": "^4.11.0"
+    "mongoose": "^7.0.3"
   }
 }
