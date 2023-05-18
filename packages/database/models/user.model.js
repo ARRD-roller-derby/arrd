@@ -1,17 +1,20 @@
-const { default: mongoose } = require('mongoose')
+const mongoose = require('mongoose')
+
+const USER_SCHEMA_NAME = 'users'
 
 const UserSchema = new mongoose.Schema({
-  discordId: 'string',
+  providerAccountId: 'string',
   wallet: 'number',
   name: 'string',
+  lastName: 'string',
   derbyName: 'string',
   numRoster: 'number',
-  mst: 'boolean',
-  msp: 'boolean',
+  mst: 'number',
+  msp: 'number',
   dailyContestAvgTime: 'number',
   dailyContestAvgAccuracy: 'number',
-  roles: ['string'],
 })
 
-const User = mongoose.model('users', UserSchema)
-module.exports = { User }
+const User = mongoose.model(USER_SCHEMA_NAME, UserSchema)
+
+module.exports = { User, UserSchema, USER_SCHEMA_NAME }

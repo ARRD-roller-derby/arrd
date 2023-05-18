@@ -1,6 +1,32 @@
 {
-  "sortedMiddleware": [],
-  "middleware": {},
+  "sortedMiddleware": [
+    "/"
+  ],
+  "middleware": {
+    "/": {
+      "env": [
+        "JWT_TOKEN",
+        "DISCORD_CLIENT_ID",
+        "DISCORD_CLIENT_SECRET",
+        "DISCORD_TOKEN",
+        "DISCORD_GUILD_ID"
+      ],
+      "files": [
+        "server/edge-runtime-webpack.js",
+        "server/middleware.js"
+      ],
+      "name": "middleware",
+      "page": "/",
+      "matchers": [
+        {
+          "regexp": "^/.*$",
+          "originalSource": "/:path*"
+        }
+      ],
+      "wasm": [],
+      "assets": []
+    }
+  },
   "functions": {},
   "version": 2
 }

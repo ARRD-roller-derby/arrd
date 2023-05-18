@@ -33,6 +33,10 @@ const SHORTER_SIGN = process.env.SHORTER_SIGN || ''
 const SHORTER_URL = process.env.SHORTER_URL || ''
 const S3_OLD_BUCKET = process.env.S3_OLD_BUCKET || ''
 const CHAT_GPT_API = process.env.CHAT_GPT_API || ''
+const VALHALLA_URL =
+  DEPLOY_TYPE !== 'production'
+    ? 'http://localhost:3000'
+    : process.env.VALHALLA_URL || ''
 
 module.exports = {
   DISCORD_TOKEN: DISCORD_TOKEN || '',
@@ -52,4 +56,6 @@ module.exports = {
   SHORTER_URL,
   S3_OLD_BUCKET,
   CHAT_GPT_API,
+  VALHALLA_URL,
+  JWT_TOKEN: process.env.JWT_TOKEN || '',
 }

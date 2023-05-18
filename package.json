@@ -7,20 +7,21 @@
     "packages/*"
   ],
   "scripts": {
+    "preinstall": "node ./scripts/preinstall.js",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "dotenv": "^16.0.3",
+    "dotenv-cli": "latest",
     "eslint-config-custom": "workspace:*",
     "prettier": "latest",
-    "turbo": "latest",
-    "dotenv-cli": "latest"
+    "turbo": "latest"
   },
   "engines": {
     "node": ">=14.0.0"
   },
-  "dependencies": {},
   "packageManager": "pnpm@7.24.3"
 }
