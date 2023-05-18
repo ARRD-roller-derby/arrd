@@ -7,7 +7,7 @@
     "packages/*"
   ],
   "scripts": {
-    "preinstall": "node ./scripts/preinstall.js",
+    "preinstall": "dotenv -e ../../.env node preinstall.js",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
