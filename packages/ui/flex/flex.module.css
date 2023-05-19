@@ -1,0 +1,29 @@
+.flex {
+  display: flex;
+  gap: var(--arrd-gap);
+}
+
+.smallGap {
+  gap: var(--arrd-gap-sm);
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.spaceBetween {
+  justify-content: space-between;
+}
+
+.reverse {
+  flex-direction: column-reverse;
+}
+
+.alignItemCenter {
+  align-items: center;
+}

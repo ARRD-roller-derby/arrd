@@ -22,6 +22,9 @@ export const authOptions = {
       clientSecret: DISCORD_CLIENT_SECRET,
     }),
   ],
+  pages: {
+    signIn: '/login',
+  },
   callbacks: {
     async jwt({ token, account }: any) {
       // Persist the OAuth access_token to the token right after signin
@@ -54,18 +57,11 @@ export const authOptions = {
           name: role.name,
           color: role.color,
         }))
-
-      const userSession = {
-        ...session,
-        user: {
-          ...session.user,
-          roles,
-          nickname: member.nick,
-        },
+      session.user = {
+        ...session.user,
+        roles,
+        nickname: member.nick,
       }
-
-      console.log(userSession)
-      // console.log('ICI, je met des trucs dans la session', await members)
       return session
     },
   },

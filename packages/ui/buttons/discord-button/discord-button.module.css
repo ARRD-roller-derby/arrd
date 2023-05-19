@@ -1,0 +1,19 @@
+.container {
+  background: #5468ff;
+  transition: 200ms ease-in-out;
+  border-radius: 3px;
+  color: #fff;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: var(--arrd-gap);
+  cursor: pointer;
+}
+
+.container:hover {
+  background: #656c85cc;
+}
+
+.icon {
+  font-size: 30px;
+}

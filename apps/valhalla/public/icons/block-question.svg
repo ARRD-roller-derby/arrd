@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 448 448"
+   version="1.1"
+   id="svg10"
+   sodipodi:docname="block-question-duotone.svg"
+   width="448"
+   height="448"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
+  <metadata
+     id="metadata14">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     id="namedview12"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="1.1877184"
+     inkscape:cx="319.24985"
+     inkscape:cy="187.74957"
+     inkscape:window-x="1272"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg10" />
+  <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+  <defs
+     id="defs4">
+    <style
+       id="style2">.fa-secondary{opacity:.4}</style>
+  </defs>
+  <path
+     class="fa-primary"
+     d="M 48,72 C 48,58.75 58.75,48 72,48 85.25,48 96,58.75 96,72 96,85.3 85.25,96 72,96 58.75,96 48,85.3 48,72 Z m 304,0 c 0,-13.25 10.7,-24 24,-24 13.3,0 24,10.75 24,24 0,13.3 -10.7,24 -24,24 -13.3,0 -24,-10.7 -24,-24 z M 96,376 c 0,13.3 -10.75,24 -24,24 -13.25,0 -24,-10.7 -24,-24 0,-13.3 10.75,-24 24,-24 13.25,0 24,10.7 24,24 z m 256,0 c 0,-13.3 10.7,-24 24,-24 13.3,0 24,10.7 24,24 0,13.3 -10.7,24 -24,24 -13.3,0 -24,-10.7 -24,-24 z"
+     id="path6"
+     style="fill:#999999" />
+  <path
+     class="fa-secondary"
+     d="M 0,64 C 0,28.65 28.65,0 64,0 h 320 c 35.3,0 64,28.65 64,64 v 320 c 0,35.3 -28.7,64 -64,64 H 64 C 28.65,448 0,419.3 0,384 Z m 258,80 c 12.2,0 22,9.8 22,21.1 0,8.6 -4.9,15.7 -10.7,19.7 l -57.6,34.6 C 204.4,223.8 200,231.6 200,240 v 16 c 0,13.3 10.7,24 24,24 13.3,0 24,-10.7 24,-24 v -2.4 l 46,-28.5 c 21.1,-11.8 34,-34.6 34,-60 0,-37.8 -31.3,-70 -70,-70 h -58 c -35.3,0 -64,29.6 -64,64 v 8 c 0,14.2 10.7,24 24,24 13.3,0 24,-9.8 24,-24 v -8 c 0,-7.9 7.2,-16 16,-16 z m -34,224 c 17.7,0 32,-14.3 32,-32 0,-17.7 -14.3,-32 -32,-32 -17.7,0 -32,14.3 -32,32 0,17.7 14.3,32 32,32 z M 72,48 C 58.75,48 48,58.75 48,72 48,85.3 58.75,96 72,96 85.25,96 96,85.3 96,72 96,58.75 85.25,48 72,48 Z m 304,48 c 13.3,0 24,-10.7 24,-24 0,-13.25 -10.7,-24 -24,-24 -13.3,0 -24,10.75 -24,24 0,13.3 10.7,24 24,24 z M 72,352 c -13.25,0 -24,10.7 -24,24 0,13.3 10.75,24 24,24 13.25,0 24,-10.7 24,-24 0,-13.3 -10.75,-24 -24,-24 z m 304,48 c 13.3,0 24,-10.7 24,-24 0,-13.3 -10.7,-24 -24,-24 -13.3,0 -24,10.7 -24,24 0,13.3 10.7,24 24,24 z"
+     id="path8"
+     style="fill:#b3b3b3" />
+</svg>

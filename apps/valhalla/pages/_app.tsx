@@ -2,6 +2,7 @@ import { Session } from 'next-auth'
 import { SessionProvider } from 'next-auth/react'
 import NProgress from 'nprogress'
 import { Router } from 'next/router'
+import 'ui/styles/global.css'
 Router.events.on('routeChangeStart', () => NProgress.start())
 Router.events.on('routeChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())

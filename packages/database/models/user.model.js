@@ -9,6 +9,7 @@ const UserSchema = new mongoose.Schema({
   lastName: 'string',
   derbyName: 'string',
   numRoster: 'number',
+  numLicence: 'string',
   mst: 'number',
   msp: 'number',
   dailyContestAvgTime: 'number',
