@@ -3,6 +3,7 @@ import { SessionProvider } from 'next-auth/react'
 import NProgress from 'nprogress'
 import { Router } from 'next/router'
 import 'ui/styles/global.css'
+import { ToastProvider } from '../../../packages/fetcher/toast/toast'
 Router.events.on('routeChangeStart', () => NProgress.start())
 Router.events.on('routeChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())
@@ -22,7 +23,9 @@ export default function App({
 }: AppProps) {
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
+      <ToastProvider>
+        <Component {...pageProps} />
+      </ToastProvider>
     </SessionProvider>
   )
 }

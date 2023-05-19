@@ -103,6 +103,12 @@ body {
   color: var(--color-txt);
 }
 
+@supports (-webkit-touch-callout: none) {
+  body {
+    min-height: -webkit-fill-available;
+  }
+}
+
 h1,
 h2,
 h3,

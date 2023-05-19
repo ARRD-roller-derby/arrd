@@ -1,0 +1,28 @@
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: var(--arrd-gap-sm);
+  height: 100vh;
+  width: 100vw;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--arrd-gap-sm);
+  padding: var(--arrd-padding-sm);
+}
+
+.title {
+  color: var(--color-arrd);
+  font-family: AmaticSC, cursive;
+  font-weight: 700;
+  font-size: var(--arrd-font-size-lg);
+}
+
+@supports (-webkit-touch-callout: none) {
+  .container {
+    min-height: -webkit-fill-available;
+  }
+}

@@ -2,6 +2,8 @@
   "cSpell.words": [
     "arrd",
     "bootcamp",
+    "BUCKETNAME",
+    "callout",
     "datepicker",
     "dayjs",
     "fontawesome",
@@ -10,6 +12,7 @@
     "nextauth",
     "nprogress",
     "preinstall",
-    "truetype"
+    "truetype",
+    "valhalla"
   ]
 }
