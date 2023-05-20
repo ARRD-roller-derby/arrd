@@ -14,7 +14,7 @@ export interface Error {
 type HTTP = 'GET' | 'POST' | 'PUT' | 'DELETE'
 
 export type FetchResult<T> = {
-  fetch: (params: Object, disabledLoading?: boolean) => void
+  get: (params: Object, disabledLoading?: boolean) => void
   post: (body: object) => void
   delete: (id: string) => void
   update: (body: object) => void
@@ -95,14 +95,12 @@ export function useFetch<T>({
       if (res.status !== 200) {
         setError(resJson)
         toastError(resJson.message)
-        console.log('_____', res.status)
       } else {
         setData(resJson)
         callback?.(resJson)
       }
     } catch (e: unknown) {
       const err = e as Error
-      console.log('_____', e)
       toastError(err.message)
       setError(err)
     }
@@ -124,7 +122,7 @@ export function useFetch<T>({
   }, [controller])
 
   return {
-    fetch: (params = {}, disabledLoading) =>
+    get: (params = {}, disabledLoading) =>
       handleFetch('GET', params, disabledLoading),
     post: (body) => handleFetch('POST', body),
     update: (body) => handleFetch('PUT', body),

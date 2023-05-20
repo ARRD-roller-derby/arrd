@@ -1,3 +1,4 @@
+import mongoose from 'mongoose'
 export interface IUser {
   _id: string
   discordId: string
@@ -11,3 +12,6 @@ export interface IUser {
   dailyContestAvgAccuracy: number
   roles: string[]
 }
+
+export interface IUserModel
+  extends mongoose.Model<IUser & mongoose.Document> {}

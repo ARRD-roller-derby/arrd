@@ -1,8 +1,12 @@
 .avatar {
-  width: 100%;
+  width: 35px;
   height: auto;
   border-radius: 50%;
   background: white;
   z-index: 1;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--color-arrd);
 }

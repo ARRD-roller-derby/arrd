@@ -1,54 +1,46 @@
-import { ReactNode, useState } from 'react'
+import { ReactNode, useContext, useState } from 'react'
 import { createContext } from 'react'
 import { TEntity } from '../../types/entity.type'
+import { IUser } from '../../../../packages/database/interfaces/user.interface'
+import { useFetch } from 'fetcher'
 
 // INTERFACES ---------------------------------------------------------------
-interface EditorProviderProps {
+interface MeProviderProps {
   children: ReactNode
-  editor?: IEditor
-}
-
-interface EditorsProviderProps {
-  children: ReactNode
-}
-export interface IEditor {
-  id: string
-  name: string
-  description: string
-  broadcast_id: string
-  createdAt: Date
 }
 
 // CONTEXT ------------------------------------------------------------------
 
-export const EditorContext = createContext<TEntity<IEditor>>(null)
-export const EditorsContext = createContext<TEntity<IEditor[]>>(null)
+export const MeContext = createContext<TEntity<IUser | null>>([null, () => {}])
 
 // PROVIDER -----------------------------------------------------------------
 
-export const EditorProvider: React.FC<EditorProviderProps> = ({
-  children,
-  editor,
-}) => {
-  const value = useState<IEditor | null>(editor)
+export const MeProvider: React.FC<MeProviderProps> = ({ children }) => {
+  const value = useState<IUser | null>(null)
 
-  return (
-    <EditorContext.Provider value={value}>{children}</EditorContext.Provider>
-  )
-}
-
-export const EditorsProvider: React.FC<EditorsProviderProps> = ({
-  children,
-}) => {
-  const value = useState<IEditor[]>([])
-
-  return (
-    <EditorsContext.Provider value={value}>{children}</EditorsContext.Provider>
-  )
+  return <MeContext.Provider value={value}>{children}</MeContext.Provider>
 }
 
 // ROUTES -------------------------------------------------------------------
 
 export enum MeRoutes {
-  me = 'me/one',
+  me = 'user/me',
+}
+
+// HOOKS --------------------------------------------------------------------
+export function useMe() {
+  const context = useContext(MeContext)
+  const [me, setUser] = context
+  const { get } = useFetch<IUser>({
+    url: MeRoutes.me,
+    callback: setUser,
+  })
+
+  if (context === undefined)
+    throw new Error('useMe fonctionne avec son contexte MeContext')
+
+  return {
+    me,
+    getMe: get,
+  }
 }
