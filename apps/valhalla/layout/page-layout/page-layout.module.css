@@ -79,7 +79,7 @@
 
 .menuBar {
   grid-area: menuBar;
-  padding: var(--arrd-padding) var(--arrd-padding-xl);
+  padding: var(--arrd-padding-xl);
   display: grid;
   gap: var(--arrd-gap-xl);
   grid-template-columns: repeat(5, 1fr);
@@ -100,6 +100,8 @@
   padding: 0;
   margin: 0;
   line-height: 0;
+  font-size: 30px;
+  color: var(--color-tierce);
 }
 
 .hamburger {
@@ -126,12 +128,6 @@
   background: var(--color-tierce);
   bottom: -3px;
   left: calc(50% - 2px);
-}
-
-@supports (-webkit-touch-callout: none) {
-  .container {
-    min-height: -webkit-fill-available;
-  }
 }
 
 @media screen and (min-width: 600px) {

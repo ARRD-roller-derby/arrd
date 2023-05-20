@@ -1,8 +1,6 @@
 import type { GetServerSidePropsContext } from 'next'
-import { getProviders } from 'next-auth/react'
-import { getServerSession } from 'next-auth/next'
-import { authOptions } from './api/auth/[...nextauth]'
 import dynamic from 'next/dynamic'
+import { getSession } from 'next-auth/react'
 
 const Login = dynamic(
   () => import('../pages_related/login/login').then((comp) => comp.Login),
@@ -14,14 +12,11 @@ export default function LoginPage() {
   return <Login />
 }
 
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const session = await getServerSession(context.req, context.res, authOptions)
-  if (session) {
-    return { redirect: { destination: '/' } }
-  }
-  const providers = await getProviders()
-
-  return {
-    props: { providers: providers ?? [] },
-  }
+export async function getServerSideProps({ req }: GetServerSidePropsContext) {
+  const session = await getSession({ req })
+  return session
+    ? {
+        redirect: { destination: '/' },
+      }
+    : { props: {} }
 }
