@@ -55,6 +55,7 @@
   --arrd-padding-sm: calc(var(--arrd-padding) / 2);
   --arrd-padding-lg: calc(var(--arrd-padding) * 1.5);
   --arrd-padding-xl: calc(var(--arrd-padding) * 2);
+  --arrd-padding-xxl: calc(var(--arrd-padding) * 2.5);
 
   --arrd-border-radius: 5px;
 
@@ -65,7 +66,8 @@
   --arrd-font-size-md: calc(var(--arrd-font-size) * 0.75);
   --arrd-font-size-lg: calc(var(--arrd-font-size) * 1.5);
   --arrd-font-size-xl: calc(var(--arrd-font-size) * 2);
-  --arrd-font-size-xxl: calc(var(--arrd-font-size) * 3);
+  --arrd-font-size-xxl: calc(var(--arrd-font-size) * 2.5);
+  --arrd-font-size-xxxl: calc(var(--arrd-font-size) * 3);
 
   --arrd-icon-size: 24px;
 }

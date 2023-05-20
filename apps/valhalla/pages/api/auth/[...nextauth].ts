@@ -10,7 +10,7 @@ import { MongoDBAdapter } from '@next-auth/mongodb-adapter'
 import clientPromise from 'database/src/mongo.auth.connect'
 import { REST } from '@discordjs/rest'
 import { Routes } from 'discord-api-types/v10'
-import { Account } from 'database'
+import { Account, User } from 'database'
 import { MongoDb } from 'database/src'
 import { ObjectId } from 'mongodb'
 
@@ -31,16 +31,30 @@ export const authOptions = {
       if (account) {
         token.accessToken = account.access_token
       }
+
+      console.log('jwt', token, account)
       return token
     },
     async session(session: any) {
       const rest = new REST({ version: '10' }).setToken(DISCORD_TOKEN)
-
       await MongoDb()
       const userId = new ObjectId(session.user.id)
-      const user = await Account.findOne({
-        userId,
-      })
+      const user = await User.findById(userId)
+
+      if (!user) return session
+
+      if (!user.providerAccountId) {
+        const account = await Account.findOne({ userId: session.user.id })
+        if (account) {
+          user.providerAccountId = account.providerAccountId
+          user.wallet = 500
+          user.msp = false
+          user.mst = false
+          user.dailyContestAvgTime = 0
+          user.dailyContestAvgAccuracy = 0
+          await user.save()
+        }
+      }
 
       if (!user) return session
 

@@ -1,9 +1,19 @@
+.layout {
+  display: flex;
+}
+
 .container {
   display: grid;
-  grid-template-rows: auto 1fr;
   gap: var(--arrd-gap-sm);
   height: 100vh;
   width: 100vw;
+  grid-template:
+    'header' auto
+    'main' 1fr
+    'menuBar' auto;
+  background: var(--color-bg);
+  z-index: 1;
+  transition: 300ms ease-in-out;
 }
 
 .header {
@@ -12,6 +22,7 @@
   justify-content: space-between;
   gap: var(--arrd-gap-sm);
   padding: var(--arrd-padding-sm);
+  grid-area: header;
 }
 
 .title {
@@ -19,10 +30,100 @@
   font-family: AmaticSC, cursive;
   font-weight: 700;
   font-size: var(--arrd-font-size-lg);
+  display: flex;
+  gap: var(--arrd-gap-sm);
+  justify-content: center;
+  align-items: center;
+}
+
+.logo a {
+  display: flex;
+  width: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  grid-area: main;
+  padding: var(--arrd-padding);
+}
+
+.layout {
+  overflow: hidden;
+}
+
+.menu {
+  background: black;
+  z-index: 0;
+  transition: 300ms ease-in-out;
+  position: fixed;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 var(--arrd-padding-xxl);
+}
+
+.container[data-open='true'] {
+  transform: translateX(0) scale(0);
+}
+
+.container[data-open='true'] {
+  transform: translateX(170px) scale(0.8);
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.menuBar {
+  grid-area: menuBar;
+  padding: var(--arrd-padding) var(--arrd-padding-xl);
+}
+
+.hamburger,
+.menuBar {
+  font-size: var(--arrd-font-size-xxl);
+  color: var(--color-tierce);
+}
+
+.hamburger {
+  padding: var(--arrd-padding-sm);
+}
+
+.menuDesktop {
+  grid-area: menu;
+  font-size: var(--arrd-font-size);
+  padding: var(--arrd-padding);
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+}
+
+.link[data-current='true'] span::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-tierce);
+  bottom: -3px;
+  left: calc(50% - 2px);
 }
 
 @supports (-webkit-touch-callout: none) {
   .container {
     min-height: -webkit-fill-available;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    grid-template:
+      'header header' auto
+      'menu main' 1fr / 130px 1fr;
   }
 }

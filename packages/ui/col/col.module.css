@@ -1,0 +1,41 @@
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--arrd-gap);
+}
+
+.center {
+  align-items: center;
+}
+
+.left {
+  align-items: flex-start;
+}
+
+.right {
+  align-items: flex-end;
+}
+
+.reverse {
+  flex-direction: column-reverse;
+}
+
+.smallGap {
+  gap: calc(var(--arrd-gap) / 2);
+}
+
+.padding {
+  padding: var(--arrd-padding);
+}
+
+.spaceBetween {
+  justify-content: space-between;
+}
+
+.middle {
+  justify-content: center;
+}
+
+.fullHeight {
+  height: 100%;
+}

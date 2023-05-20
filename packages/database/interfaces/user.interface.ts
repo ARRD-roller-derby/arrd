@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 export interface IUser {
   _id: string
-  discordId: string
+  providerAccountId: string
   wallet: number
   name: string
   derbyName: string
@@ -10,8 +10,6 @@ export interface IUser {
   msp: boolean
   dailyContestAvgTime: number
   dailyContestAvgAccuracy: number
-  roles: string[]
 }
 
-export interface IUserModel
-  extends mongoose.Model<IUser & mongoose.Document> {}
+export interface IUserModel extends mongoose.Model<IUser & mongoose.Document> {}

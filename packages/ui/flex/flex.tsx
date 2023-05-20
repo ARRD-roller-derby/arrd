@@ -13,6 +13,7 @@ interface FlexProps {
 export const Flex: FC<FlexProps> = (props) => (
   <div
     className={`${styles.flex} ${Object.keys(props)
+      .filter((className) => props[className as keyof FlexProps])
       .map((className) => styles[className])
       .join(' ')}`}
   >

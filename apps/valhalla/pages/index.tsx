@@ -1,6 +1,13 @@
 import { getSession } from 'next-auth/react'
 import { GetServerSidePropsContext } from 'next'
-import { Index } from '../pages_related/index'
+import dynamic from 'next/dynamic'
+
+const Index = dynamic(
+  () => import('../pages_related/index/index').then((comp) => comp.Index),
+  {
+    ssr: false,
+  }
+)
 
 export default function IndexPage() {
   return <Index />

@@ -7,8 +7,6 @@ import {
   ReactNode,
 } from 'react'
 import styles from './toast.module.css'
-import { CrossClose } from '../../ui/buttons/cross-close/cross-close'
-
 // INTERFACES ---------------------------------------------------------------
 interface ToastProviderProps {
   children: ReactNode
@@ -32,7 +30,7 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({ children }) => {
     type: ToastType
   }>({ message: null, type: 'invisible' })
 
-  const timerIdRef = useRef<number | null>(null)
+  const timerIdRef = useRef<any | null>(null)
   const startRef = useRef<number>(0)
   const toastRef = useRef<{ message: IMessage; type: ToastType }>({
     message: null,

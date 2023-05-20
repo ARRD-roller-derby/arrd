@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: var(--arrd-gap-sm);
+}
+
+.icon {
+  color: var(--color-tierce);
+}
+
+.label {
+  font-size: var(--arrd-font-size);
+  position: relative;
+}

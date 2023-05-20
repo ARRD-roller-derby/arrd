@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--arrd-padding-sm);
+  color: var(--color-tierce);
+}
+
+.num {
+  font-family: Poppins, sans-serif;
+  font-size: var(--arrd-font-size);
+  transition: 200ms ease-in-out;
+}
+
+.num[data-blur='true'] {
+  filter: blur(3px);
+}
+
+.icon {
+  font-size: var(--arrd-font-size);
+}

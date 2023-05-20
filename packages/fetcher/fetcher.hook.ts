@@ -14,7 +14,7 @@ export interface Error {
 type HTTP = 'GET' | 'POST' | 'PUT' | 'DELETE'
 
 export type FetchResult<T> = {
-  get: (params: Object, disabledLoading?: boolean) => void
+  get: (params?: Object, disabledLoading?: boolean) => void
   post: (body: object) => void
   delete: (id: string) => void
   update: (body: object) => void

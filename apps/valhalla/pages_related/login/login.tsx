@@ -1,7 +1,6 @@
 import { signIn } from 'next-auth/react'
-import { Flex } from '../../../../packages/ui/flex/flex'
 import styles from './login.module.css'
-import { DiscordButton } from '../../../../packages/ui/buttons/discord-button/discord-button'
+import { DiscordButton, Flex } from 'ui'
 import Image from 'next/image'
 
 export const Login: React.FC = () => {

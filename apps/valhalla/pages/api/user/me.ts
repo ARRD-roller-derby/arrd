@@ -19,6 +19,5 @@ export default async function me(
     return response.status(404).json({
       message: 'Utilisateur introuvable',
     })
-
-  return response.status(200).json({ user })
+  return response.status(200).json(user.toObject())
 }
