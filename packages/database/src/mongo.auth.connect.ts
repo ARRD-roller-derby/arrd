@@ -5,7 +5,7 @@ declare global {
   var _mongoClientPromise: any | undefined
 }
 
-const uri = MONGO_URI
+const uri = MONGO_URI as string
 
 let client: any, clientPromise: any
 

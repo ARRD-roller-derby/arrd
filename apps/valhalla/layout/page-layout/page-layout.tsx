@@ -7,7 +7,7 @@ import { MyWallet } from '../../entities/me/wallet'
 import { useEffect, useState } from 'react'
 import { useIsMobile } from '../../hooks/is-mobile'
 import { Hamburger } from '../../../../packages/ui/icons/hamburger/hamburger'
-import { Col, MenuLink, ValhallaLink } from 'ui'
+import { Col, MenuLink, MenuShortcut, ValhallaLink } from 'ui'
 import { useRouter } from 'next/router'
 
 interface PageLayoutProps {
@@ -60,9 +60,17 @@ const Layout: React.FC<PageLayoutProps> = ({ children }) => {
       >
         {isMobile ? (
           <div className={styles.menuBar}>
-            <div onClick={() => setOpen(!open)}>
-              <Hamburger />
+            <div className={styles.menuBarIcon}>
+              <Hamburger onClick={() => setOpen(true)} />
             </div>
+
+            {ValhallaLink.map((link) => (
+              <div className={styles.menuBarIcon} key={link.label}>
+                <Link href={link.href}>
+                  <MenuShortcut icon={link.icon} />
+                </Link>
+              </div>
+            ))}
           </div>
         ) : (
           <div className={styles.menuDesktop}>
@@ -70,13 +78,14 @@ const Layout: React.FC<PageLayoutProps> = ({ children }) => {
               {ValhallaLink.map((link) => (
                 <div
                   className={styles.link}
+                  key={link.href}
                   data-current={
                     link.href === '/'
                       ? pathname === link.href
                       : !!pathname.includes(link.href)
                   }
                 >
-                  <Link href={link.href} key={link.href}>
+                  <Link href={link.href}>
                     <MenuLink label={link.label} icon={link.icon} />
                   </Link>
                 </div>

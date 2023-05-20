@@ -80,12 +80,26 @@
 .menuBar {
   grid-area: menuBar;
   padding: var(--arrd-padding) var(--arrd-padding-xl);
+  display: grid;
+  gap: var(--arrd-gap-xl);
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
 }
 
 .hamburger,
 .menuBar {
-  font-size: var(--arrd-font-size-xxl);
+  font-size: var(--arrd-font-size-xl);
   color: var(--color-tierce);
+}
+
+.menuBarIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
 }
 
 .hamburger {
