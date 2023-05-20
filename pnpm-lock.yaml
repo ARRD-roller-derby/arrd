@@ -3,6 +3,10 @@ lockfileVersion: '6.0'
 importers:
 
   .:
+    dependencies:
+      dayjs:
+        specifier: ^1.11.7
+        version: 1.11.7
     devDependencies:
       dotenv:
         specifier: ^16.0.3
@@ -101,6 +105,9 @@ importers:
       database:
         specifier: workspace:*
         version: link:../../packages/database
+      dayjs:
+        specifier: ^1.11.7
+        version: 1.11.7
       discord-api-types:
         specifier: ^0.37.42
         version: 0.37.42
@@ -283,6 +290,9 @@ importers:
       babel-plugin-macros:
         specifier: ^3.1.0
         version: 3.1.0
+      dayjs:
+        specifier: ^1.11.7
+        version: 1.11.7
     devDependencies:
       '@types/react':
         specifier: ^18.0.17
