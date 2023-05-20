@@ -7,7 +7,7 @@ interface WalletProps {
 }
 export const Wallet: React.FC<WalletProps> = ({ num }) => (
   <div className={styles.container}>
-    <div className={styles.num} data-blur={num && typeof num !== 'number'}>
+    <div className={styles.num} data-blur={!num}>
       {num || '4569'}
     </div>
     <FontAwesomeIcon icon={faDragon} className={styles.icon} />

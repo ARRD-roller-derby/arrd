@@ -1,1 +1,1 @@
-export { NjordDb, MongoDb } from './db'
+export { MongoDb } from './db'

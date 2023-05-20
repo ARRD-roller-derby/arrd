@@ -11,8 +11,8 @@ import clientPromise from 'database/src/mongo.auth.connect'
 import { REST } from '@discordjs/rest'
 import { Routes } from 'discord-api-types/v10'
 import { Account, User } from 'database'
-import { MongoDb } from 'database/src'
 import { ObjectId } from 'mongodb'
+import { MongoDb } from 'database/src/db'
 
 export const authOptions = {
   adapter: MongoDBAdapter(clientPromise),
@@ -26,15 +26,6 @@ export const authOptions = {
     signIn: '/login',
   },
   callbacks: {
-    async jwt({ token, account }: any) {
-      // Persist the OAuth access_token to the token right after signin
-      if (account) {
-        token.accessToken = account.access_token
-      }
-
-      console.log('jwt', token, account)
-      return token
-    },
     async session(session: any) {
       const rest = new REST({ version: '10' }).setToken(DISCORD_TOKEN)
       await MongoDb()
