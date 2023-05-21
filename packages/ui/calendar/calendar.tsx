@@ -167,16 +167,14 @@ export function useCalendar() {
       })
     }
   }
-
   useEffect(() => {
-    if (currentPage) createCalendar()
+    createCalendar()
   }, [currentPage])
 
   useEffect(() => {
     if (events) {
-      const newCal = [...calendar]
-      setCalendar(
-        newCal.map((day) => ({
+      setCalendar((prev) =>
+        prev.map((day) => ({
           ...day,
           events: events.filter(
             (event) =>
@@ -187,10 +185,10 @@ export function useCalendar() {
       )
     }
   }, [events])
-
   return {
     calendar,
     nextMonth,
     previousMonth,
+    currentPage,
   }
 }

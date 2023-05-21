@@ -1,12 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSquareEllipsisVertical } from '@fortawesome/pro-regular-svg-icons'
+import { faBars, faTimes } from '@fortawesome/sharp-solid-svg-icons'
 
 interface HamburgerProps {
   onClick?: () => void
+  close?: boolean
 }
-export const Hamburger: React.FC<HamburgerProps> = ({ onClick }) => (
+export const Hamburger: React.FC<HamburgerProps> = ({ onClick, close }) => (
   <FontAwesomeIcon
     onClick={() => onClick?.()}
-    icon={faSquareEllipsisVertical}
+    icon={close ? faTimes : faBars}
   />
 )

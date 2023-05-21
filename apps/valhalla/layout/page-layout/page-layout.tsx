@@ -45,7 +45,7 @@ const Layout: React.FC<PageLayoutProps> = ({ children }) => {
           </Col>
 
           <div onClick={() => setOpen(false)} className={styles.hamburger}>
-            <Hamburger />
+            <Hamburger close={true} />
           </div>
         </div>
       )}
