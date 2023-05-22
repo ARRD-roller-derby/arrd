@@ -27,13 +27,13 @@ export function tiptapJsonToMd(contentArray: Content[]) {
       markdown += '\n'
       // Ajoute le bon nombre de # en fonction du niveau du titre
       markdown += `${'#'.repeat(content.attrs?.level || 0)} ${tiptapJsonToMd(
-        content.content
+        content.content || []
       )}\n`
     } else if (content.type === 'paragraph') {
-      markdown += `${tiptapJsonToMd(content.content)}\n`
+      markdown += `${tiptapJsonToMd(content.content || [])}\n`
     } else if (content.type === 'bulletList') {
       content.content.forEach((listItem) => {
-        markdown += `- ${tiptapJsonToMd(listItem.content)}\n`
+        markdown += `- ${tiptapJsonToMd(listItem.content || [])}\n`
       })
     }
 
