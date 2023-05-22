@@ -14,7 +14,7 @@ export function tiptapJsonToMd(contentArray: Content[]) {
       let txt = content.text || ''
 
       if (content.marks) {
-        content.marks.forEach((mark) => {
+        content.marks?.forEach((mark) => {
           if (mark.type === 'bold') txt = `**${txt.trim()}**`
           if (mark.type === 'italic') txt = `*${txt.trim()}*`
           if (mark.type === 'strike') txt = `~~${txt.trim()}~~`
@@ -31,7 +31,7 @@ export function tiptapJsonToMd(contentArray: Content[]) {
     } else if (content.type === 'paragraph') {
       markdown += `${content.content ? tiptapJsonToMd(content.content) : ''}\n`
     } else if (content.type === 'bulletList') {
-      content?.content.forEach((listItem) => {
+      content?.content?.forEach((listItem) => {
         markdown += `- ${
           listItem.content ? tiptapJsonToMd(listItem.content) : ''
         }\n`
