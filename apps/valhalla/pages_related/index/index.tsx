@@ -3,6 +3,7 @@ import { PageLayout } from '../../layout/page-layout/page-layout'
 import { Message } from 'message'
 import { tiptapJsonToMd } from 'utils'
 
+//TODO on peux passer un whisper pour le type d'event
 export const Index: React.FC = () => {
   return (
     <PageLayout>
