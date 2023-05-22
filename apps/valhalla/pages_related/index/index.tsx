@@ -1,4 +1,4 @@
-import { Editor } from 'ui'
+import { Editor, Popin } from 'ui'
 import { PageLayout } from '../../layout/page-layout/page-layout'
 import { Message } from 'message'
 import { tiptapJsonToMd } from 'utils'
@@ -7,6 +7,9 @@ export const Index: React.FC = () => {
   return (
     <PageLayout>
       <h1>Index</h1>
+      <Popin buttonTxt="Creer" modalTitle="Creer un nouveau projet">
+        <p>Contenu de la popin</p>
+      </Popin>
       <Editor
         isEditable={false}
         content={{

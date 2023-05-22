@@ -635,6 +635,8 @@ label::first-letter {
 .rs-theme-dark {
   --rs-calendar-today-bg: var(--color-arrd);
   --rs-input-focus-border: var(--color-arrd);
+  --rs-btn-primary-bg: var(--color-arrd);
+  --rs-bg-overlay: var(--color-bg-light);
 }
 
 .rs-calendar-panel
