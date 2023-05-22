@@ -5,12 +5,14 @@ interface PopinProps {
   children: React.ReactNode
   buttonTxt: string
   modalTitle?: string
+  loading?: boolean
 }
 
 export const Popin: React.FC<PopinProps> = ({
   children,
   modalTitle,
   buttonTxt,
+  loading,
 }) => {
   const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true)
@@ -18,10 +20,12 @@ export const Popin: React.FC<PopinProps> = ({
   return (
     <>
       <ButtonToolbar>
-        <Button onClick={handleOpen}>{buttonTxt}</Button>
+        <Button onClick={handleOpen} loading={loading}>
+          {buttonTxt}
+        </Button>
       </ButtonToolbar>
 
-      <Modal open={open} onClose={handleClose}>
+      <Modal open={open} onClose={handleClose} overflow={true}>
         {modalTitle && (
           <Modal.Header>
             <Modal.Title>{modalTitle}</Modal.Title>

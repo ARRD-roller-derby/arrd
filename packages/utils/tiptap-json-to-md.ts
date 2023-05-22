@@ -26,7 +26,7 @@ export function tiptapJsonToMd(contentArray: Content[]) {
     } else if (content.type === 'heading') {
       markdown += '\n'
       // Ajoute le bon nombre de # en fonction du niveau du titre
-      markdown += `${'#'.repeat(content.attrs.level)} ${tiptapJsonToMd(
+      markdown += `${'#'.repeat(content.attrs?.level || 0)} ${tiptapJsonToMd(
         content.content
       )}\n`
     } else if (content.type === 'paragraph') {
