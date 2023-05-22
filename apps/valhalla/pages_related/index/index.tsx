@@ -12,7 +12,7 @@ export const Index: React.FC = () => {
         <p>Contenu de la popin</p>
       </Popin>
       <Editor
-        isEditable={false}
+        // isEditable={false}
         content={{
           type: 'doc',
           content: [
@@ -29,6 +29,7 @@ export const Index: React.FC = () => {
         }}
         setContent={(val: any) => {
           //  console.log(JSON.stringify(val))
+
           console.log(tiptapJsonToMd([val]))
         }}
       />

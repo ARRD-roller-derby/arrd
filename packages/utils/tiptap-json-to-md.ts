@@ -2,11 +2,11 @@ interface Content {
   type: string
   text?: string
   attrs?: { level: number }
-  marks?: Content[] | undefined
-  content?: Content[] | undefined
+  marks?: Content[]
+  content?: Content[]
 }
 
-export function tiptapJsonToMd(contentArray: Content[] | undefined) {
+export function tiptapJsonToMd(contentArray: Content[]) {
   let markdown = ''
   if (!contentArray) return markdown
   contentArray.forEach((content) => {
