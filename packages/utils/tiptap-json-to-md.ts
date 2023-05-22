@@ -25,19 +25,14 @@ export function tiptapJsonToMd(contentArray: Content[]) {
       markdown += txt + ' '
     } else if (content.type === 'heading') {
       markdown += '\n'
-      // Ajoute le bon nombre de # en fonction du niveau du titre
-      if (!content.content) return
       markdown += `${'#'.repeat(content.attrs?.level || 0)} ${tiptapJsonToMd(
-        content.content
+        content.content || []
       )}\n`
     } else if (content.type === 'paragraph') {
-      if (!content.content) return
       markdown += `${tiptapJsonToMd(content.content || [])}\n`
     } else if (content.type === 'bulletList') {
-      if (!content.content) return
-      content.content.forEach((listItem) => {
-        if (!content.content) return
-        markdown += `- ${tiptapJsonToMd(listItem.content)}\n`
+      content?.content.forEach((listItem) => {
+        markdown += `- ${tiptapJsonToMd(listItem.content || [])}\n`
       })
     }
 
@@ -46,5 +41,5 @@ export function tiptapJsonToMd(contentArray: Content[]) {
     }
   })
 
-  return markdown
+  return markdown.trim()
 }
