@@ -637,10 +637,15 @@ label::first-letter {
   --rs-input-focus-border: var(--color-arrd);
   --rs-btn-primary-bg: var(--color-arrd);
   --rs-bg-overlay: var(--color-bg-light);
+  --rs-btn-primary-hover-bg: var(--color-second);
 }
 
 .rs-calendar-panel
   .rs-calendar-table-cell-selected
   .rs-calendar-table-cell-content {
   border-radius: var(--arrd-border-radius);
+}
+
+.rs-modal-title {
+  font-size: var(--arrd-font-size-lg);
 }

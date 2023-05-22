@@ -11,7 +11,7 @@ export function tiptapJsonToMd(contentArray: Content[]) {
   if (!contentArray) return markdown
   contentArray.forEach((content) => {
     if (content.type === 'text') {
-      let txt = content.text
+      let txt = content.text || ''
 
       if (content.marks) {
         content.marks.forEach((mark) => {
