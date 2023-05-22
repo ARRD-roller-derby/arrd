@@ -25,14 +25,16 @@ export function tiptapJsonToMd(contentArray: Content[]) {
       markdown += txt + ' '
     } else if (content.type === 'heading') {
       markdown += '\n'
-      markdown += `${'#'.repeat(content.attrs?.level || 0)} ${tiptapJsonToMd(
-        content.content || []
-      )}\n`
+      markdown += `${'#'.repeat(content.attrs?.level || 0)} ${
+        content.content ? tiptapJsonToMd(content.content) : ''
+      }\n`
     } else if (content.type === 'paragraph') {
-      markdown += `${tiptapJsonToMd(content.content || [])}\n`
+      markdown += `${content.content ? tiptapJsonToMd(content.content) : ''}\n`
     } else if (content.type === 'bulletList') {
       content?.content.forEach((listItem) => {
-        markdown += `- ${tiptapJsonToMd(listItem.content || [])}\n`
+        markdown += `- ${
+          listItem.content ? tiptapJsonToMd(listItem.content) : ''
+        }\n`
       })
     }
 
