@@ -4,10 +4,10 @@ import Link from 'next/link'
 import { MyAvatar } from '../../entities/me/avatar'
 import { MeProvider } from '../../entities/me/me'
 import { MyWallet } from '../../entities/me/wallet'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useIsMobile } from '../../hooks/is-mobile'
 import { Hamburger } from '../../../../packages/ui/icons/hamburger/hamburger'
-import { Col, MenuLink, MenuShortcut, ValhallaLink } from 'ui'
+import { Column, MenuLink, MenuShortcut, ValhallaLink } from 'ui'
 import { useRouter } from 'next/router'
 
 interface PageLayoutProps {
@@ -23,8 +23,8 @@ const Layout: React.FC<PageLayoutProps> = ({ children }) => {
     <div className={styles.layout} data-open={open}>
       {isMobile && (
         <div className={styles.menu}>
-          <Col fullHeight={isMobile} middle={isMobile}>
-            <Col>
+          <Column fullHeight={isMobile} middle={isMobile}>
+            <Column>
               {ValhallaLink.map((link) => (
                 <div
                   key={link.href}
@@ -41,8 +41,8 @@ const Layout: React.FC<PageLayoutProps> = ({ children }) => {
                   </Link>
                 </div>
               ))}
-            </Col>
-          </Col>
+            </Column>
+          </Column>
 
           <div onClick={() => setOpen(false)} className={styles.hamburger}>
             <Hamburger close={true} />
@@ -74,7 +74,7 @@ const Layout: React.FC<PageLayoutProps> = ({ children }) => {
           </div>
         ) : (
           <div className={styles.menuDesktop}>
-            <Col>
+            <Column>
               {ValhallaLink.map((link) => (
                 <div
                   className={styles.link}
@@ -90,7 +90,7 @@ const Layout: React.FC<PageLayoutProps> = ({ children }) => {
                   </Link>
                 </div>
               ))}
-            </Col>
+            </Column>
           </div>
         )}
         <div className={styles.header}>

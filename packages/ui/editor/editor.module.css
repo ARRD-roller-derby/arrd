@@ -1,0 +1,25 @@
+.bubble {
+  background: var(--color-bg-dark);
+  padding: var(--arrd-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--arrd-gap);
+  border-radius: var(--arrd-border-radius);
+  font-size: var(--arrd-font-size);
+}
+
+.group {
+  display: flex;
+  justify-content: center;
+  gap: var(--arrd-gap);
+}
+
+.icon,
+.active {
+  cursor: pointer;
+}
+
+.active {
+  color: var(--color-tierce);
+}

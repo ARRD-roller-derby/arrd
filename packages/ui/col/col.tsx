@@ -15,7 +15,7 @@ interface ColProps {
   middle?: boolean
 }
 
-export const Col: FC<ColProps> = (props) => (
+export const Column: FC<ColProps> = (props) => (
   <div
     ref={props?.ref}
     className={`${styles.col} ${Object.keys(props)

@@ -1,3 +1,4 @@
+process.env.TZ = 'Europe/Paris'
 import { MongoDb } from 'database/src'
 import { User } from 'database'
 import { NextApiRequest, NextApiResponse } from 'next'

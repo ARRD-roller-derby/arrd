@@ -1,3 +1,4 @@
+@import '~rsuite/dist/rsuite.min.css';
 @font-face {
   font-family: AmaticSC;
   src: url('/static/fonts/AmaticSC-Regular.ttf') format('truetype');
@@ -45,6 +46,9 @@
   --color-link: #30b980;
   --color-border: #2a2b2d;
 
+  /** --- RS Suite --- **/
+  --rs-calendar-today-bg: red !important;
+
   /** --- spaces --- **/
   --arrd-gap: 10px;
   --arrd-gap-sm: calc(var(--arrd-gap) / 2);
@@ -71,7 +75,6 @@
 
   --arrd-icon-size: 24px;
 }
-
 * {
   box-sizing: border-box;
   scrollbar-color: var(--color-second) var(--color-bg-light);
@@ -605,4 +608,37 @@ label::first-letter {
 
 .fa-secondary {
   fill: var(--color-tierce);
+}
+
+/** --- TipTap --- **/
+
+.ProseMirror {
+  background: var(--color-bg-dark);
+  border: 1px solid var(--color-bg-light-extra);
+  padding: var(--arrd-padding);
+  transition: 200ms ease-in-out;
+  border-radius: var(--arrd-border-radius);
+}
+
+.ProseMirror[contenteditable='false'] {
+  background: none;
+  border: none;
+}
+
+.ProseMirror-focused {
+  outline: none;
+  border: 1px solid var(--color-tierce);
+}
+
+/** --- RSuite --- **/
+
+.rs-theme-dark {
+  --rs-calendar-today-bg: var(--color-arrd);
+  --rs-input-focus-border: var(--color-arrd);
+}
+
+.rs-calendar-panel
+  .rs-calendar-table-cell-selected
+  .rs-calendar-table-cell-content {
+  border-radius: var(--arrd-border-radius);
 }

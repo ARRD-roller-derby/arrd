@@ -1,0 +1,9 @@
+{
+  "include": ["."],
+  "compilerOptions": {
+    "lib": ["ES2020"],
+    "module": "ESNext",
+    "target": "es6"
+  },
+  "exclude": ["dist", "build", "node_modules"]
+}

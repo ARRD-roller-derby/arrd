@@ -3,7 +3,7 @@ import { SessionProvider } from 'next-auth/react'
 import NProgress from 'nprogress'
 import { Router } from 'next/router'
 import 'ui/styles/global.css'
-import { ToastProvider } from '../../../packages/fetcher/toast/toast'
+import { CustomProvider, frFR_RSuite } from 'ui'
 Router.events.on('routeChangeStart', () => NProgress.start())
 Router.events.on('routeChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())
@@ -22,10 +22,10 @@ export default function App({
   pageProps: { session, ...pageProps },
 }: AppProps) {
   return (
-    <SessionProvider session={session}>
-      <ToastProvider>
+    <CustomProvider locale={frFR_RSuite} theme="dark">
+      <SessionProvider session={session}>
         <Component {...pageProps} />
-      </ToastProvider>
-    </SessionProvider>
+      </SessionProvider>
+    </CustomProvider>
   )
 }

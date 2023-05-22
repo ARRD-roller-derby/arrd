@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useContext, useEffect, useState } from 'react'
 import { LoaderContext } from './loader/loader'
-import { useToast } from './toast/toast'
+import { useToaster, Notification } from 'ui'
 
 export interface Error {
   message: string
@@ -54,8 +54,7 @@ export function useFetch<T>({
     [controller, setController] = useState<AbortController>(
       new AbortController()
     ),
-    { error: toastError } = useToast()
-
+    toaster = useToaster()
   useEffect(() => {
     setController(new AbortController())
   }, [])
@@ -94,14 +93,32 @@ export function useFetch<T>({
 
       if (res.status !== 200) {
         setError(resJson)
-        toastError(resJson.message)
+        toaster.push(
+          <Notification closable type="error" header="Erreur">
+            {resJson.message}
+          </Notification>,
+          {
+            placement: 'topEnd',
+            duration: 5000,
+            className: 'error',
+          }
+        )
       } else {
         setData(resJson)
         callback?.(resJson)
       }
     } catch (e: unknown) {
       const err = e as Error
-      toastError(err.message)
+      toaster.push(
+        <Notification closable type="error" header="Erreur">
+          {err.message}
+        </Notification>,
+        {
+          placement: 'topEnd',
+          duration: 5000,
+          className: 'error',
+        }
+      )
       setError(err)
     }
 
@@ -110,7 +127,7 @@ export function useFetch<T>({
   }
 
   useEffect(() => {
-    if (!controller || lazy) return
+    if (!controller || lazy || inProgress) return
     //timeout for prevent preload page
     setTimeout(() => {
       if (!data) handleFetch(type || 'GET', undefined)
