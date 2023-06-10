@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
 const sessionSchema = new mongoose.Schema({
-  sessionToken: 'string',
-  userId: 'string',
-  expires: 'date',
+  sessionToken: String,
+  userId: String,
+  expires: Date,
 })
 
 const Session = mongoose.model('sessions', sessionSchema)

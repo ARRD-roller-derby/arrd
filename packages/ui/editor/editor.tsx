@@ -3,7 +3,7 @@ import { useEditor, EditorContent, BubbleMenu } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import Underline from '@tiptap/extension-underline'
 import { useEffect } from 'react'
-import { Button } from 'rsuite'
+import { Divider } from 'rsuite'
 import { Flex } from '../flex/flex'
 import {
   faBold,
@@ -43,13 +43,9 @@ export const Editor: React.FC<EditorProps> = ({
   }, [isEditable, editor])
 
   return (
-    <>
-      {editor && (
-        <BubbleMenu
-          editor={editor}
-          tippyOptions={{ duration: 100 }}
-          className={styles.bubble}
-        >
+    <div className={styles.container} data-editable={isEditable}>
+      {editor && isEditable && (
+        <div className={styles.menu}>
           <div className={styles.group}>
             <FontAwesomeIcon
               icon={faH1}
@@ -85,6 +81,7 @@ export const Editor: React.FC<EditorProps> = ({
               }
             />
           </div>
+          <Divider vertical />
           <div className={styles.group}>
             <FontAwesomeIcon
               icon={faBold}
@@ -114,6 +111,7 @@ export const Editor: React.FC<EditorProps> = ({
               }
             />
           </div>
+          <Divider vertical />
           <div className={styles.group}>
             <FontAwesomeIcon
               icon={faList}
@@ -123,9 +121,9 @@ export const Editor: React.FC<EditorProps> = ({
               }
             />
           </div>
-        </BubbleMenu>
+        </div>
       )}
-      <EditorContent editor={editor} />
-    </>
+      <EditorContent editor={editor} className={styles.editor} />
+    </div>
   )
 }

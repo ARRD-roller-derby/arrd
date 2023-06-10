@@ -6,17 +6,28 @@ interface PopinProps {
   buttonTxt: string
   modalTitle?: string
   loading?: boolean
+  buttonTxtConfirm?: string
+  handleSubmit?: () => void
+  noFooter?: boolean
 }
 
 export const Popin: React.FC<PopinProps> = ({
   children,
   modalTitle,
   buttonTxt,
+  buttonTxtConfirm,
   loading,
+  handleSubmit,
+  noFooter,
 }) => {
   const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
+  const handleOk = () => {
+    handleSubmit && handleSubmit()
+    //handleClose()
+  }
+
   return (
     <>
       <ButtonToolbar>
@@ -31,18 +42,17 @@ export const Popin: React.FC<PopinProps> = ({
             <Modal.Title>{modalTitle}</Modal.Title>
           </Modal.Header>
         )}
-        <Modal.Body>
-          <Placeholder.Paragraph />
-          {children}
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={handleClose} appearance="primary">
-            Ok
-          </Button>
-          <Button onClick={handleClose} appearance="subtle">
-            Cancel
-          </Button>
-        </Modal.Footer>
+        <Modal.Body>{children}</Modal.Body>
+        {!noFooter && (
+          <Modal.Footer>
+            <Button onClick={handleOk} appearance="primary">
+              {buttonTxtConfirm ? buttonTxtConfirm : 'OK'}
+            </Button>
+            <Button onClick={handleClose} appearance="subtle">
+              Fermer
+            </Button>
+          </Modal.Footer>
+        )}
       </Modal>
     </>
   )

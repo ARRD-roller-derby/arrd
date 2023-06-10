@@ -12,6 +12,7 @@ declare module 'next-auth' {
       emailVerified: string
       roles: IRole[]
       nickname: string
+      wallet: number
     }
   }
 }

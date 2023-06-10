@@ -613,21 +613,12 @@ label::first-letter {
 /** --- TipTap --- **/
 
 .ProseMirror {
-  background: var(--color-bg-dark);
-  border: 1px solid var(--color-bg-light-extra);
-  padding: var(--arrd-padding);
-  transition: 200ms ease-in-out;
-  border-radius: var(--arrd-border-radius);
-}
-
-.ProseMirror[contenteditable='false'] {
   background: none;
   border: none;
 }
 
 .ProseMirror-focused {
   outline: none;
-  border: 1px solid var(--color-tierce);
 }
 
 /** --- RSuite --- **/
@@ -638,6 +629,11 @@ label::first-letter {
   --rs-btn-primary-bg: var(--color-arrd);
   --rs-bg-overlay: var(--color-bg-light);
   --rs-btn-primary-hover-bg: var(--color-second);
+  --rs-listbox-option-selected-text: var(--color-tierce);
+  --rs-input-bg: var(--color-bg-dark);
+  --rs-picker-value: var(--color-tierce);
+  --rs-listbox-option-selected-bg: var(--color-bg);
+  --rs-bg-active: var(--color-arrd);
 }
 
 .rs-calendar-panel

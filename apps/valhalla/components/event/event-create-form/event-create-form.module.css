@@ -1,0 +1,15 @@
+.modal .rs-modal-content {
+  background-color: var(--color-bg-dark);
+}
+
+.inline {
+  display: flex;
+  gap: var(--arrd-gap);
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 500px) {
+  .inline {
+    flex-direction: column;
+  }
+}

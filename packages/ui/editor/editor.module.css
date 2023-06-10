@@ -1,12 +1,31 @@
-.bubble {
+.container {
   background: var(--color-bg-dark);
+  border: 1px solid var(--color-bg-light-extra);
+  padding: var(--arrd-padding);
+  transition: 200ms ease-in-out;
+  border-radius: var(--arrd-border-radius);
+}
+
+.container[data-editable='false'] {
+  background: none;
+  border: none;
+  border-radius: none;
+}
+
+.container:focus {
+  border: 1px solid var(--color-tierce);
+}
+
+.menu {
   padding: var(--arrd-padding);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   gap: var(--arrd-gap);
   border-radius: var(--arrd-border-radius);
   font-size: var(--arrd-font-size);
+  position: sticky;
+  top: 0;
+  background: var(--color-bg-dark);
+  z-index: 1;
 }
 
 .group {
@@ -22,4 +41,8 @@
 
 .active {
   color: var(--color-tierce);
+}
+
+.editor {
+  min-height: 100px;
 }

@@ -1,9 +1,8 @@
 import styles from './page-layout.module.css'
 import { GridBox } from 'ui/grid-box/grid-box'
 import Link from 'next/link'
-import { MyAvatar } from '../../entities/me/avatar'
-import { MeProvider } from '../../entities/me/me'
-import { MyWallet } from '../../entities/me/wallet'
+import { MyAvatar } from '../../components/me/avatar'
+import { MyWallet } from '../../components/me/wallet'
 import { useState } from 'react'
 import { useIsMobile } from '../../hooks/is-mobile'
 import { Hamburger } from '../../../../packages/ui/icons/hamburger/hamburger'
@@ -14,7 +13,7 @@ interface PageLayoutProps {
   children: React.ReactNode
 }
 
-const Layout: React.FC<PageLayoutProps> = ({ children }) => {
+export const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
   const [open, setOpen] = useState(false)
   const isMobile = useIsMobile()
   const { pathname } = useRouter()
@@ -114,9 +113,3 @@ const Layout: React.FC<PageLayoutProps> = ({ children }) => {
     </div>
   )
 }
-
-export const PageLayout: React.FC<PageLayoutProps> = ({ children }) => (
-  <MeProvider>
-    <Layout>{children}</Layout>
-  </MeProvider>
-)

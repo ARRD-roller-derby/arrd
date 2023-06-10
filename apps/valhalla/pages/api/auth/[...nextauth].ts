@@ -13,6 +13,7 @@ import { Routes } from 'discord-api-types/v10'
 import { Account, User } from 'database'
 import { ObjectId } from 'mongodb'
 import { MongoDb } from 'database/src/db'
+import { IUser } from 'database/interfaces/user.interface'
 
 export const authOptions = {
   adapter: MongoDBAdapter(clientPromise),

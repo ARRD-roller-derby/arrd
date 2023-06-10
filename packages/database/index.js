@@ -5,6 +5,7 @@ const { Question } = require('./models/question.model')
 const { Skill, UserSkill } = require('./models/skill.model')
 const { Account } = require('./models/account.model')
 const { Event } = require('./models/event.model')
+const { eventTypes } = require('./data/event-type')
 
 module.exports = {
   NjordDb,
@@ -17,4 +18,5 @@ module.exports = {
   UserSkill,
   Event,
   Account,
+  eventTypes,
 }
